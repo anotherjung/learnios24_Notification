@@ -9,10 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var noti:UILocalNotification = UILocalNotification()
+        noti.category = "First_Cate"
+        noti.alertBody = "Hi there"
+        //noti.regionTriggersOnce = true
+        noti.soundName = UILocalNotificationDefaultSoundName
+        
+        
+        noti.fireDate = NSDate(timeIntervalSinceNow: 10)
+        UIApplication.sharedApplication().scheduleLocalNotification(noti)
+        
     }
 
     override func didReceiveMemoryWarning() {
